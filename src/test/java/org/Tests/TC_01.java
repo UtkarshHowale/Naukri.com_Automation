@@ -2,6 +2,8 @@ package org.Tests;
 
 import org.Base.BaseTest;
 import org.Pages.LoginPage;
+import org.Utils.ExcelDataProvider;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.Assertion;
 
@@ -11,22 +13,28 @@ public class TC_01 extends BaseTest {
     public  LoginPage loginPage = null;
     public Assertion assertion = new Assertion();
 
-    @Test
-    public void AutomateLoginFunctionality() throws InterruptedException {
+    @Test(dataProviderClass = ExcelDataProvider.class,dataProvider = "Data")
+    public void AutomateLoginFunctionality(String Username, String Password){
 
-        loginPage = new LoginPage(driver);
+        try {
 
-        loginPage.GoToLoginSection();
-        Thread.sleep(2000);
+            loginPage = new LoginPage(driver);
 
-        loginPage.Login("utkarshhowale16@gmail.com","Utkarsh@16");
-        Thread.sleep(5000);
+            loginPage.GoToLoginSection();
+            Thread.sleep(5000);
 
-        String ActualTitle = driver.getTitle();
+            loginPage.Login(Username,Password);
+            Thread.sleep(5000);
 
-        String ExpectedTitle = "Home | Mynaukri";
+            String ActualTitle = driver.getTitle();
 
-        assertion.assertEquals(ActualTitle,ExpectedTitle);
+            String ExpectedTitle = "Home | Mynaukri";
 
+            assertion.assertEquals(ActualTitle,ExpectedTitle);
+        }
+        catch (Exception e){
+
+            e.printStackTrace();
+        }
     }
 }

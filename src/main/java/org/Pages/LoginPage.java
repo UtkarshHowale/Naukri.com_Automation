@@ -14,7 +14,7 @@ public class LoginPage {
     By Username = By.xpath("//input[@placeholder='Enter your active Email ID / Username']");
     By Password = By.xpath("//input[@placeholder='Enter your password']");
     By LoginButton = By.xpath("//button[@class=\"btn-primary loginButton\"]");
-    By LoginLayerButton = By.id("login_Layer");
+    By LoginLayerButton = By.xpath("//a[@id='login_Layer']");
 
     public void GoToLoginSection(){
 
