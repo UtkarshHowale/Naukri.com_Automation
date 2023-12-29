@@ -28,6 +28,7 @@ public class LoginPage {
         driver.findElement(LoginButton).click();
     }
 
+
     public void LoginToNaukriProfile(){
 
         driver.findElement(Username).sendKeys("utkarshhowale16@gmail.com");
