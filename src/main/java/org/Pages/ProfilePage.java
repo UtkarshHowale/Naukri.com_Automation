@@ -1,6 +1,5 @@
 package org.Pages;
 
-import org.checkerframework.checker.index.qual.PolyUpperBound;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
