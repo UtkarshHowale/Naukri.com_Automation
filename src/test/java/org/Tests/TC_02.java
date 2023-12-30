@@ -18,8 +18,8 @@ public class TC_02 extends BaseTest {
 
         homePage.GoToProfilePage();
         Thread.sleep(2000);
-        profilePage.HandlePopUpWindow();
-        Thread.sleep(2000);
+//        profilePage.HandlePopUpWindow();
+//        Thread.sleep(2000);
         profilePage.ClickOnProfileHeadline();
         Thread.sleep(2000);
         profilePage.EnterProfileHeadline();
